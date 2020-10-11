@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bbq</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Bbq</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
-  </head>
+  <%= stylesheet_pack_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+</head>
 
-  <body>
+<body>
+<div class="container">
+  <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top scrolling-navbar">
     <div class="container">
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <%= link_to "BBQ!", root_path, class: 'navbar-brand' %>
-      <% flash_messages %>
 
-      <%= yield %>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+          <% if user_signed_in?  %>
+            <%= link_to 'Профиль', current_user, class: "nav-item nav-link" %>
+            <%= link_to 'Выйти', destroy_user_session_path, :method => :delete, class: "nav-item nav-link" %>
+          <% else  %>
+            <%= link_to 'Войти', new_user_session_path, class: "nav-item nav-link" %>
+            <%= link_to 'Зарегистрироваться', new_user_registration_path, class: "nav-item nav-link" %>
+          <% end  %>
+        </div>
+      </div>
     </div>
-  </body>
+  </nav>
+  <% flash_messages %>
+  <div class="mt-5 py-2">
+    <%= yield %>
+  </div>
+</div>
+</body>
 </html>

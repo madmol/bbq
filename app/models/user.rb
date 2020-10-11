@@ -6,6 +6,12 @@ class User < ApplicationRecord
   has_many :events
 
   validates :name, presence: true, length: { maximum: 35 }
-  validates :email, presence: true, length: { maximum: 255 }
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
+
+  before_validation :set_name, on: :create
+
+  private
+
+  def set_name
+    self.name = "ТОварисч #{rand(777)}" if self.name.blank?
+  end
 end
