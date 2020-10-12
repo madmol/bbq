@@ -14,6 +14,10 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+group :production do
+  gem 'pg'
+end
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
