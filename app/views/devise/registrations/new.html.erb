@@ -4,66 +4,45 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <form>
-    <div class="input-group my-2" style="width: 250px">
+    <div class="input-group my-2" style="width: 250px" >
       <div class="input-group-prepend">
         <div class="input-group-text justify-content-center p-0", style="width: 40px">
-          <%= fa_icon "user", class: "mx-0 p-0" %>
+          <%= fa_icon "user"%>
         </div>
       </div>
-      <input type="text" class="form-control" placeholder="Name">
+      <%= f.text_field :name, placeholder: "Имя", class: "form-control" %>
     </div>
 
     <div class="input-group my-2" style="width: 250px">
       <div class="input-group-prepend">
         <div class="input-group-text justify-content-center p-0", style="width: 40px">
-          <%= fa_icon "envelope", class: "mx-0 p-0" %>
+          <%= fa_icon "envelope" %>
         </div>
       </div>
-      <input type="text" class="form-control" placeholder="Email">
+      <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "form-control" %>
     </div>
 
     <div class="input-group my-2" style="width: 250px">
       <div class="input-group-prepend">
         <div class="input-group-text justify-content-center p-0", style="width: 40px">
-          <%= fa_icon "key", class: "mx-0 p-0" %>
+          <%= fa_icon "key" %>
         </div>
       </div>
-      <input type="text" class="form-control" placeholder="Password">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Пароль", class: "form-control" %>
     </div>
 
     <div class="input-group my-2" style="width: 250px">
       <div class="input-group-prepend">
         <div class="input-group-text justify-content-center p-0", style="width: 40px">
-          <%= fa_icon "key", class: "mx-0 p-0" %>
+          <%= fa_icon "key" %>
         </div>
       </div>
-      <input type="text" class="form-control" placeholder="Password confirmation">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Подтверждение пароля", class: "form-control" %>
     </div>
-
-    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    <%= f.submit "Зарегистрироваться", class: "btn btn-secondary" %>
   </form>
-
-  <div class="field">
-    <%= f.label :email %><br/>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br/>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br/>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
 <% end %>
+<div class="my-2">
+  <%= render "devise/shared/links", class: "my-2" %>
+</div>
 
-<%= render "devise/shared/links" %>
