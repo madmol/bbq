@@ -19,6 +19,14 @@
     border-radius: 50%;
 }
 
+/* Inputs for forms */
+/*.input-group>.input-group-prepend {*/
+/*    flex: 0 0 40px;*/
+/*}*/
+/*.input-group .input-group-text {*/
+/*    width: 100%;*/
+/*}*/
+
 /* Thumbnails for events/index */
 .thumbnail {
     position: relative;
