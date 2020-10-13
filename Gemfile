@@ -8,6 +8,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'puma', '~> 4.1'
 gem 'uglifier'
 gem 'webpacker', '~> 4.0'
+gem 'font_awesome5_rails'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
