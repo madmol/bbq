@@ -20,13 +20,13 @@
 
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav">
-          <% if user_signed_in?  %>
+          <% if user_signed_in? %>
             <%= link_to 'Профиль', current_user, class: "nav-item nav-link" %>
             <%= link_to 'Выйти', destroy_user_session_path, :method => :delete, class: "nav-item nav-link" %>
-          <% else  %>
+          <% else %>
             <%= link_to 'Войти', new_user_session_path, class: "nav-item nav-link" %>
             <%= link_to 'Зарегистрироваться', new_user_registration_path, class: "nav-item nav-link" %>
-          <% end  %>
+          <% end %>
         </div>
       </div>
     </div>

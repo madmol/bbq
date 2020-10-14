@@ -14,13 +14,19 @@ module ApplicationHelper
       concat(
         content_tag(:div, message, class: "alert #{bootstrap_class(msg_type)}") do
           concat(
-            content_tag(:button, 'x', class: "close", data: { dismiss: 'alert' })
+            content_tag(:button, "&times;".html_safe, class: "close", data: {dismiss: 'alert'}, aria: {hidden: true})
           )
           concat(message)
         end
       )
     end
     nil
+  end
+
+  def show_errors(object, field_name)
+    if object.errors.messages[field_name].any?
+      "#{field_name.to_s.humanize} #{object.errors.messages[field_name].join(", ")}"
+    end
   end
 
   def user_avatar(user)
