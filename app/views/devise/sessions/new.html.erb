@@ -21,15 +21,16 @@
 
   <% if devise_mapping.rememberable? %>
     <div class="input-group mb-2">
-      <%= f.check_box :remember_me %>
-      <label class="form-check-label ml-2">
-        Запомнить
-      </label>
+      <%= f.check_box :remember_me, id: "checkbox_remember" %>
+      <%= f.label "Запомнить", class: "form-check-label ml-2", for: "checkbox_remember" %>
     </div>
   <% end %>
 
   <%= f.submit "Войти", class: "btn btn-secondary btn-sm" %>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="my-2">
+  <%= render "devise/shared/links", class: "my-2" %>
+</div>
+
 
