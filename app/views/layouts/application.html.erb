@@ -16,7 +16,7 @@
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <%= link_to "BBQ!", root_path, class: 'navbar-brand' %>
+      <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
 
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav">
@@ -35,6 +35,10 @@
     <% flash_messages %>
     <%= yield %>
   </div>
+
+  <footer>
+    <p>&copy; <%= t('app.company') %> 2020</p>
+  </footer>
 </div>
 </body>
 </html>

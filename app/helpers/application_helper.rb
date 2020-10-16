@@ -25,7 +25,7 @@ module ApplicationHelper
 
   def show_errors(object, field_name)
     if object.errors.messages[field_name].any?
-      "#{field_name.to_s.humanize} #{object.errors.messages[field_name].join(", ")}"
+      t("activerecord.attributes.user.#{field_name}") + " #{object.errors.messages[field_name].join(", ")}"
     end
   end
 

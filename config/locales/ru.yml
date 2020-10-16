@@ -1,2 +1,29 @@
 ru:
-  hello: 'Привет мир!'
+  activerecord:
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+    errors:
+      messages:
+        confirmation: "не совпадает с паролем"
+  controllers:
+    events:
+      created: 'Событие успешно создано'
+      updated: 'Событие успешно обновлено'
+      destroyed: 'Событие удалено'
+    users:
+      updated: 'Вы обновили свой профиль'
+  app:
+    name: 'Шашлыки'
+    company: 'Хороший программист'
