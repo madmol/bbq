@@ -17,6 +17,11 @@ ru:
     errors:
       messages:
         confirmation: "не совпадает с паролем"
+
+  app:
+    name: 'Шашлыки'
+    company: 'Хороший программист'
+
   controllers:
     events:
       created: 'Событие успешно создано'
@@ -24,6 +29,8 @@ ru:
       destroyed: 'Событие удалено'
     users:
       updated: 'Вы обновили свой профиль'
-  app:
-    name: 'Шашлыки'
-    company: 'Хороший программист'
+
+  errors:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'
