@@ -9,6 +9,7 @@
     </div>
     <%= f.text_field :name, placeholder: "Имя", class: "form-control" %>
   </div>
+  <p class="text-danger mt-n2"><%= show_errors(@user, :name) %></p>
 
   <div class="input-group input-group-sm my-2" style="width: 250px">
     <div class="input-group-prepend">
