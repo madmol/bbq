@@ -22,7 +22,15 @@ ru:
     name: 'Шашлыки'
     company: 'Хороший программист'
 
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+
   controllers:
+    comments:
+      created: 'Ваш комментарий добавлен'
+      destroyed: 'Комментарий удален'
+      error: 'Ошибка с комментарием'
     events:
       created: 'Событие успешно создано'
       updated: 'Событие успешно обновлено'
