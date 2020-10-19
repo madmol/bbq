@@ -37,6 +37,9 @@ ru:
       destroyed: 'Событие удалено'
     users:
       updated: 'Вы обновили свой профиль'
+    subscriptions:
+      created: 'Вы подписались на событие'
+      deleted: 'Вы отписались от события'
 
   errors:
     one: '%{count} ошибка'

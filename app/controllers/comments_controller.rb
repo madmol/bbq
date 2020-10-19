@@ -26,7 +26,6 @@ class CommentsController < ApplicationController
   end
 
   private
-
   def set_comment
     @comment = @event.comments.find(params[:id])
   end
