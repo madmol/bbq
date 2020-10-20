@@ -1,4 +1,6 @@
 ru:
+  are_you_sure: 'Вы уверены?'
+
   activerecord:
     models:
       user: 'Пользователь'
@@ -39,11 +41,14 @@ ru:
       updated: 'Вы обновили свой профиль'
     subscriptions:
       created: 'Вы подписались на событие'
-      deleted: 'Вы отписались от события'
+      destroyed: 'Вы отписались от события'
+      error: 'Подписка/отписка не сработала'
 
   errors:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
     many: '%{count} ошибок'
 
-  are_you_sure: 'Вы уверены?'
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить данную подписку?'
