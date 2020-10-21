@@ -3,7 +3,7 @@ class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: %i[destroy]
 
   def create
-    @new_subscription = @event.comments.build(subscription_params)
+    @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
 
     if @new_subscription.save
