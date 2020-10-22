@@ -16,6 +16,8 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+      subscriprtion:
+        email_used: 'Email: "%{email}" уже зарегистрирован'
     errors:
       messages:
         confirmation: "не совпадает с паролем"
