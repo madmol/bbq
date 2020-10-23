@@ -9,7 +9,7 @@ class Subscription < ApplicationRecord
 
   validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
-  validate :search_user_by_email
+  validate :search_user_by_email, unless: -> { user.present? }
 
   def user_name
     if user.present?
@@ -29,8 +29,8 @@ class Subscription < ApplicationRecord
 
   def search_user_by_email
     user_to_check = User.find_by(email: self.user_email)
-    unless user_to_check.nil? || user.present?
-      errors.add(:base, I18n.t('activerecord.attributes.subscriprtion.email_used', email: user_to_check.email))
+    unless user_to_check.nil?
+      errors.add(:base, :email_used, email: user_to_check.email)
     end
   end
 end

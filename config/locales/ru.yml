@@ -16,9 +16,12 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
-      subscriprtion:
-        email_used: 'Email: "%{email}" уже зарегистрирован'
     errors:
+      models:
+        subscription:
+          attributes:
+            base:
+              email_used: 'Email: "%{email}" уже зарегистрирован'
       messages:
         confirmation: "не совпадает с паролем"
 
