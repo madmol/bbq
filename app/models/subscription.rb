@@ -28,10 +28,8 @@ class Subscription < ApplicationRecord
   end
 
   def search_user_by_email
-    user_to_check = User.find_by(email: user_email)
-
-    if user_to_check.present?
-      errors.add(:base, :email_used, email: user_to_check.email)
+    if User.find_by(email: user_email).present?
+      errors.add(:base, :email_used, email: user_email)
     end
   end
 end
