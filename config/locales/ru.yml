@@ -7,6 +7,7 @@ ru:
       event: 'Событие'
     attributes:
       user:
+        avatar: 'Аватарка'
         email: 'Email'
         name: 'Имя'
         password: 'Пароль'
@@ -48,6 +49,10 @@ ru:
       created: 'Вы подписались на событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+    photos:
+      created: 'Вы добавили фотогорафию к событию'
+      destroyed: 'Вы удалили фотку'
+      error: 'Что-то не так с фотографией'
 
   errors:
     one: '%{count} ошибка'
