@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <%= content_tag 'div', '',
                       class: 'event-background',
-                      style: "background-image: url(#{asset_pack_path('media/images/event_thumb.jpg')})"
+                      style: "background-image: url(#{event_photo(@event)})"
       %>
 
       <div class="event-info-inner row">
@@ -47,7 +47,7 @@
 
       <div class="event-comments buffer-top">
         <%= render partial: 'comments/form',
-                   locals: {comment: @new_comment || @event.comments.build} %>
+                   locals: { comment: @new_comment || @event.comments.build } %>
 
         <div class="buffer-both">
           <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
@@ -77,7 +77,7 @@
           <h4>Я пойду:</h4>
           <div>
             <%= render partial: 'subscriptions/form',
-                       locals: {subscription: @new_subscription || @event.subscriptions.build} %>
+                       locals: { subscription: @new_subscription || @event.subscriptions.build } %>
           </div>
         </div>
       <% end %>

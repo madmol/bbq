@@ -38,7 +38,7 @@ module ApplicationHelper
   end
 
   def user_avatar_thumb(user)
-    if user.avatat.file.present?
+    if user.avatar.file.present?
       user.avatar.thumb.url
     else
       asset_pack_path('media/images/user.png')
@@ -51,7 +51,7 @@ module ApplicationHelper
     if photos.any?
       photos.sample.photo.url
     else
-      asset_pack_path('media/images/event.png')
+      asset_pack_path('media/images/event.jpg')
     end
   end
 
@@ -61,7 +61,7 @@ module ApplicationHelper
     if photos.any?
       photos.sample.photo.thumb.url
     else
-      asset_pack_path('media/images/event_thumb.png')
+      asset_pack_path('media/images/event_thumb.jpg')
     end
   end
 end

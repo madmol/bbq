@@ -7,4 +7,8 @@ class Event < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 255 }
   validates :address, :datetime, :user, presence: true
+
+  def visitors
+    (subscribers + [user]).uniq
+  end
 end

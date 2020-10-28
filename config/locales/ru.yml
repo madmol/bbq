@@ -5,6 +5,8 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      subscription: 'Подписка'
+      photo: 'Фотография'
     attributes:
       user:
         avatar: 'Аватарка'
@@ -17,6 +19,11 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+      comment:
+        user_name: 'Ваше имя'
+        body: 'Комментарий'
+      photo:
+        photo: 'Файл фотографии'
     errors:
       models:
         subscription:
