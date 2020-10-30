@@ -80,8 +80,8 @@ Rails.application.configure do
       :address        => ENV['MAILGUN_SMTP_SERVER'],
       :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
       :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-      :domain         => 'sandbox7824d2c4de9e4d53a6893265f56bb7d7.mailgun.org',
-      :authentication => :plain
+      :domain         => 'bbqforeveryone.heroku.com',
+      :authentication => :plain,
   }
 
   # Inserts middleware to perform automatic connection switching.
