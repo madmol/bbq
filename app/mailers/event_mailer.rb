@@ -3,7 +3,7 @@ class EventMailer < ApplicationMailer
   #   en.event_mailer.subscription.subject
   #
   def subscription(event, subscription)
-    @email = subscription.user_mail
+    @email = subscription.user_email
     @name = subscription.user_name
     @event = event
 
