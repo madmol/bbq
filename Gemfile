@@ -15,11 +15,6 @@ gem 'webpacker', '~> 4.0'
 gem 'font_awesome5_rails'
 gem 'rmagick'
 
-#for mailtrap
-
-gem 'rest-client'
-gem 'json'
-
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'pry-rails'

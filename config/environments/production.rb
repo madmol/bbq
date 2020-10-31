@@ -75,19 +75,16 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
 
-  response = RestClient.get "https://mailtrap.io/api/v1/inboxes.json?api_token=#{ENV['MAILTRAP_API_TOKEN']}"
-  first_inbox = JSON.parse(response)[0] # get first inbox
-
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-      :user_name => first_inbox['username'],
-      :password => first_inbox['password'],
-      :address => first_inbox['domain'],
-      :domain => first_inbox['domain'],
-      :port => first_inbox['smtp_ports'][0],
-      :authentication => :plain
-  }
-
+  # config.action_mailer.smtp_settings = {
+  #     :user_name => 'apikey',
+  #     :password => 'your_sendgrid_api_key',
+  #     :domain => 'yourdomain.com',
+  #     :address => 'smtp.sendgrid.net',
+  #     :port => 587,
+  #     :authentication => :plain,
+  #     :enable_starttls_auto => true
+  # }
 
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
