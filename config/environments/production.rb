@@ -72,19 +72,18 @@ Rails.application.configure do
 
 
   config.action_mailer.default_url_options = { host: 'bbqforeveryone.herokuapp.com' }
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #     :user_name => 'apikey',
-  #     :password => 'your_sendgrid_api_key',
-  #     :domain => 'yourdomain.com',
-  #     :address => 'smtp.sendgrid.net',
-  #     :port => 587,
-  #     :authentication => :plain,
-  #     :enable_starttls_auto => true
-  # }
+  config.action_mailer.smtp_settings = {
+       :address => "smtp.gmail.com",
+       :port => 587,
+       :user_name => ENV['GMAIL_USERNAME'],
+       :password => ENV['GMAIL_PASSWORD'],
+       :authentication => :plain,
+       :enable_starttls_auto => true
+  }
 
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
