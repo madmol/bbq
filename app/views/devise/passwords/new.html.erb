@@ -1,7 +1,6 @@
 <h2>Забыли пароль?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-
   <div class="input-group input-group-sm my-2" style="width: 250px">
     <div class="input-group-prepend">
       <div class="input-group-text justify-content-center p-0" , style="width: 40px">
@@ -12,7 +11,9 @@
   </div>
   <p class="text-danger mt-n2"><%= show_errors(@user, :email) %></p>
 
-  <%= f.submit "Восстановить пароль", class: "btn btn-secondary btn-sm" %>
+  <div>
+    <%= f.submit "Восстановить пароль", class: "btn btn-secondary btn-sm" %>
+  </div>
 <% end %>
 
 <div class="my-2">

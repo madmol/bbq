@@ -1,11 +1,12 @@
 <%= t '.title' %>
 ----
 
-Ссылка на фотографию: <%= @photo_url %>
-Автор: <%= @name %>
+<%= t '.photo_link' %>: <%= @photo_url %>
+<%= t '.author' %>: <%= @name %>
 
 ----------------------
 
-Событие: <%= @event.title %>
-Состоится: <%= l @event.datetime %>
-Организатор: <%= @event.user.name %>
+<%= t '.event' %>: <%= @event.title %>
+<%= t '.datetime' %>: <%= l @event.datetime %>
+<%= t '.owner' %>: <%= @event.user.name %>
+
