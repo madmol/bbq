@@ -7,8 +7,6 @@ gem 'carrierwave', '~> 2.0'
 gem 'devise'
 gem 'devise-i18n'
 gem 'fog-aws'
-# Preview email in the default browser instead of sending it in development
-gem "letter_opener", :group => :development
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'rails-i18n'
 gem 'puma', '~> 4.1'
@@ -28,6 +26,8 @@ end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  # Preview email in the default browser instead of sending it in development
+  gem "letter_opener"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
