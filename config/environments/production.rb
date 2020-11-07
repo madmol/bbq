@@ -79,8 +79,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
        :address => "smtp.sendgrid.net",
        :port => 587,
-       :user_name => ENV['SENDGRID_USERNAME'],
-       :password => ENV['SENDGRID_PASSWORD'],
+       # :user_name => ENV['SENDGRID_USERNAME'],
+       :user_name => apikey,
+       # :password => ENV['SENDGRID_PASSWORD'],
+       :password => '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',
        :authentication => :plain,
        :domain => 'bbqforeveryone.herokuapp.com',
        :enable_starttls_auto => true
