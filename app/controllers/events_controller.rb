@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_event, only: %i[show]
   before_action :set_current_user_event, only: %i[edit update destroy]
-  before_action :password_quard!, only: %i[show]
+  before_action :password_guard!, only: %i[show]
   # GET /events
   def index
     @events = Event.all
@@ -75,6 +75,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :address, :datetime, :description)
+    params.require(:event).permit(:title, :address, :datetime, :description, :pincode)
   end
 end
