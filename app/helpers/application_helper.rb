@@ -66,10 +66,6 @@ module ApplicationHelper
   end
 
   def yandex_api_key
-    if Rails.env.development?
-      "https://api-maps.yandex.ru/2.1/?apikey=#{Rails.application.credentials[:YANDEX_API_KEY]}&lang=ru_RU"
-    elsif Rails.env.production?
-      "https://api-maps.yandex.ru/2.1/?apikey=#{ENV['YANDEX_API']}&lang=ru_RU"
-    end
+    "https://api-maps.yandex.ru/2.1/?apikey=#{ENV['YANDEX_API']}&lang=ru_RU"
   end
 end
