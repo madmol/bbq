@@ -51,6 +51,4 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
-
-  ENV['YANDEX_API'] = Rails.application.credentials[:YANDEX_API_KEY]
 end
