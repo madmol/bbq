@@ -35,16 +35,6 @@
 
   <div class="row">
     <div class="col-md-8">
-      <script src=<%= yandex_api_key %> type="text/javascript">
-      </script>
-      <%= javascript_pack_tag 'yandexmap' %>
-      <div id="map"
-           data-address='<%= @event.address %>'
-           style="width: 100%; height: 400px;">
-      </div>
-
-
-
       <div class="event-photos">
         <div class="event-photos-gallery">
           <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
@@ -66,6 +56,14 @@
     </div>
 
     <div class="col-md-4">
+      <script src=<%= yandex_api_key %> type="text/javascript">
+      </script>
+      <%= javascript_pack_tag 'yandexmap' %>
+      <div id="map"
+           data-address='<%= @event.address %>'
+           style="width: 100%; height: 300px; border: 1px solid #FFFFCC" >
+      </div>
+
       <div class="event-owner">
         <h4>Зовет:</h4>
         <p><%= render partial: 'users/user', object: @event.user %></p>
