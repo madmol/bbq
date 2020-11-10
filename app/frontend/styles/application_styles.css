@@ -12,6 +12,11 @@
     margin-bottom: 20px;
 }
 
+.buffer-both-index {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 /* Avatars for users & events */
 .img-icon, .img-icon-small {
     height: 50px;
