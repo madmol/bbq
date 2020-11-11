@@ -68,4 +68,11 @@ module ApplicationHelper
   def yandex_api_key
     "https://api-maps.yandex.ru/2.1/?apikey=#{Rails.application.credentials[:YANDEX_API_KEY]}&lang=ru_RU"
   end
+
+  def photo_delete(photo)
+    if current_user_can_edit?(photo)
+      link_to (fa_icon "trash-alt"), event_photo_path(photo.event, photo), method: :delete, data: {confirm: t('are_you_sure')}
+    end
+  end
 end
+
