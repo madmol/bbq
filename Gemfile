@@ -17,7 +17,7 @@ gem 'rmagick'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
-  gem 'pry-rails'
+  gem 'byebug'
 end
 
 group :production do
