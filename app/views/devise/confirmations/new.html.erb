@@ -1,0 +1,21 @@
+<h2><%= t('.resend_confirmation_instructions') %></h2>
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <div class="input-group input-group-sm my-2" style="width: 250px">
+    <div class="input-group-prepend">
+      <div class="input-group-text justify-content-center p-0" , style="width: 40px">
+        <%= fa_icon "envelope" %>
+      </div>
+    </div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),placeholder: "Email", class: "form-control" %>
+  </div>
+  <p class="text-danger mt-n2"><%= show_errors(@user, :email) %></p>
+
+  <div>
+    <%= f.submit t('.resend_confirmation_instructions'), class: "btn btn-secondary btn-sm" %>
+  </div>
+<% end %>
+
+<div class="my-2">
+  <%= render "devise/shared/links", class: "my-2" %>
+</div>
