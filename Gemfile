@@ -28,6 +28,12 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   # Preview email in the default browser instead of sending it in development
   gem "letter_opener"
+
+  gem 'capistrano', '~> 3.11'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-passenger', '~> 0.2'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-bundler', '~> 1.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
