@@ -71,7 +71,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-  config.action_mailer.default_url_options = { host: 'bbqer.ru' }
+  config.action_mailer.default_url_options = { host: Rails.application.credentials[:DOMAIN] }
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_deliveries = true
 

@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'info@bbqer.ru'
+  default from: Rails.application.credentials[:DEFAULT_EMAIL]
   layout 'mailer'
 end
 
