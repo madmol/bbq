@@ -2,11 +2,18 @@ require File.expand_path("./environment", __dir__)
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.1"
 
+
+# Fix for "Rails assets manifest file not found" in Capistrano deploy
+# https://makandracards.com/makandra/100898-fix-for-rails-assets-manifest-file-not-found-in-capistrano-deploy
+Rake::Task["deploy:assets:backup_manifest"].clear_actions
+
 set :application, "bbq"
 set :repo_url, "https://github.com/madmol/bbq"
+set :conditionally_migrate, true
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, 'main'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/#{fetch :application}"
