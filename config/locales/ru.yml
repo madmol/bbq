@@ -1,6 +1,5 @@
 ru:
   are_you_sure: 'Вы уверены?'
-
   activerecord:
     models:
       user: 'Пользователь'
@@ -33,15 +32,12 @@ ru:
               email_used: 'Email: "%{email}" уже зарегистрирован'
       messages:
         confirmation: "не совпадает с паролем"
-
   app:
     name: 'Шашлыки'
     company: 'Хороший программист'
-
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
-
   controllers:
     comments:
       created: 'Ваш комментарий добавлен'
@@ -62,16 +58,13 @@ ru:
       created: 'Вы добавили фотогорафию к событию'
       destroyed: 'Вы удалили фотку'
       error: 'Что-то не так с фотографией'
-
   errors:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
     many: '%{count} ошибок'
-
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить данную подписку?'
-
   event_mailer:
     comment:
       title: 'Новый комментарий'
@@ -97,3 +90,6 @@ ru:
       owner: 'Организатор'
       photo_link: 'Ссылка на фотографию'
       subject: 'Новая фотография для события %{title}'
+  global:
+    flash:
+      not_authorized: 'У вас нет прав на выполнение этого действия!'

@@ -13,6 +13,10 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  def author?(obj)
+    obj.user == self
+  end
+
   private
 
   def link_subscriptions

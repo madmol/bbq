@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except: %i[show index]
-  before_action :set_event, only: %i[show]
-  before_action :set_current_user_event, only: %i[edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :set_event, only: %i[edit destroy show update]
   before_action :password_guard!, only: %i[show]
+  before_action :authorize_event!, except: %i[index show]
+  after_action :verify_authorized, except: %i[index show]
 
   def index
     @events = Event.all
@@ -46,6 +47,10 @@ class EventsController < ApplicationController
 
   private
 
+  def authorize_event!
+    authorize(@event || Event)
+  end
+
   def password_guard!
     return true if @event.pincode.blank?
     return true if signed_in? && current_user == @event.user
@@ -62,10 +67,6 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
-  end
-
-  def set_current_user_event
-    @event = current_user.events.find(params[:id])
   end
 
   def event_params
