@@ -1,11 +1,6 @@
 class EventPolicy < ApplicationPolicy
-
-  def index?
-    true
-  end
-
   def show?
-    true
+    # record.pincode.blank? || user.try(:author?, record)
   end
 
   def create?

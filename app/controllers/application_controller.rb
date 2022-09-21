@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   private
 
   def user_not_authorized
-    flash[:danger] = t('global.flash.not_authorized')
+    flash[:error] = t('global.flash.not_authorized')
     redirect_to(request.referrer || root_path)
   end
 end
