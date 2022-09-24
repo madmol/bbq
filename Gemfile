@@ -20,7 +20,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails', '~> 5.0.0'
   gem 'sqlite3', '~> 1.4'
+  gem 'pundit-matchers', '~> 1.7.0'
 end
 
 group :production do
