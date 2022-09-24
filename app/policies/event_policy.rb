@@ -12,7 +12,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.try(:author?, record)
+    update?
   end
 
   class Scope < Scope
