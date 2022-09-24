@@ -1,6 +1,6 @@
 class EventPolicy < ApplicationPolicy
   def show?
-    # record.pincode.blank? || user.try(:author?, record)
+    true
   end
 
   def create?

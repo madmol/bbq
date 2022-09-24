@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :set_event, only: %i[edit destroy show update]
+  before_action :authorize_event!, except: %i[index]
   before_action :password_guard!, only: %i[show]
-  before_action :authorize_event!, except: %i[index show]
-  after_action :verify_authorized, except: %i[index show]
+  after_action :verify_authorized, except: %i[index]
 
   def index
     @events = Event.all
