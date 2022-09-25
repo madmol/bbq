@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_can_edit?
 
+  def pundit_user
+    UserContext.new(current_user, cookies)
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name password password_confirmation email])
     devise_parameter_sanitizer.permit(:account_update, keys: %i[password password_confirmation current_password])

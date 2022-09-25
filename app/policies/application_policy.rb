@@ -1,10 +1,14 @@
 # frozen_string_literal: true
+# https://stackoverflow.com/questions/20362459/accessing-session-parameters-in-pundit-policy
 
 class ApplicationPolicy
-  attr_reader :user, :record
+  attr_reader :user, :record, :cookies, :context
 
-  def initialize(user, record)
-    @user = user
+  delegate :user, to: :context
+  delegate :cookies, to: :context
+
+  def initialize(context, record)
+    @context = context
     @record = record
   end
 

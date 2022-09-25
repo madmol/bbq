@@ -1,6 +1,6 @@
 class EventPolicy < ApplicationPolicy
   def show?
-    true
+    user_show?(record)
   end
 
   def create?
@@ -13,6 +13,13 @@ class EventPolicy < ApplicationPolicy
 
   def destroy?
     update?
+  end
+
+  private
+
+  def user_show?(event)
+    event.pincode.blank? || (user.present? && user == event.try(:user)) ||
+      event.pincode_valid?(cookies["events_#{event.id}_pincode"])
   end
 
   class Scope < Scope
