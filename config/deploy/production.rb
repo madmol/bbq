@@ -3,9 +3,12 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server Rails.application.credentials[:DOMAIN], user: Rails.application.credentials[:SSH_USER], roles: %w{app db web}, port: Rails.application.credentials[:SSH_PORT]
+server Rails.application.credentials[:DOMAIN], user: Rails.application.credentials[:SSH_USER], roles: %w{app db web reqsue_worker}, port: Rails.application.credentials[:SSH_PORT]
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
+set :resque_environment_task, true
+set :workers, { "#{fetch(:application)}*" => 1 }
+
 
 # role-based syntax
 # ==================
