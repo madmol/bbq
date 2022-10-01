@@ -15,6 +15,7 @@ gem 'webpacker', '~> 4.0'
 gem 'font_awesome5_rails'
 gem 'pundit', '~> 2.2'
 gem 'rmagick'
+gem 'resque', '~> 2.4'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
