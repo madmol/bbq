@@ -4,11 +4,11 @@ class EventMailerJob < ApplicationJob
   def perform(model)
     case model
     when Photo
-      Event.subscribers_mailing_list(model.event, model.user).each do |email|
+      model.event.subscribers_mailing_list(model.user&.email).each do |email|
         EventMailer.photo(model, email).deliver_later
       end
     when Comment
-      Event.subscribers_mailing_list(model.event, model.user).each do |email|
+      model.event.subscribers_mailing_list(model.user&.email).each do |email|
         EventMailer.comment(model, email).deliver_later
       end
     when Subscription

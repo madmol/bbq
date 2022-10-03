@@ -8,8 +8,8 @@ class Event < ApplicationRecord
   validates :title, presence: true, length: { maximum: 255 }
   validates :address, :datetime, :user, presence: true
 
-  def self.subscribers_mailing_list(event, author)
-    event.subscriptions.map(&:user_email) + [event.user.email] - [author&.email]
+  def subscribers_mailing_list(exclude_email)
+    subscriptions.map(&:user_email) + [user.email] - [exclude_email]
   end
 
   def visitors
