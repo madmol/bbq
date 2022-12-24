@@ -1,24 +1,39 @@
-# README
+# BBQ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description 
 
-Things you may want to cover:
+Application allows you invite friends to various type of actions(bbq, cinema, festival, etc). User create event with descritpion, date and location and after other user can subscribe to the event.
 
-* Ruby version
+The application has functionality: 
 
-* System dependencies
+* Authorization, authentification - Devise, Pundit
+* OAuth - GitHub, Yandex
+* File Downloading - Carrierwave
+* Mail sending - ActionMailer, Sendmail
+* Background tasks - ActiveJob, Resque, Redis
+* Layout - Bootstrap4
 
-* Configuration
+## Preview
 
-* Database creation
+[http://bbqer.ru/](http://bbqer.ru/)
 
-* Database initialization
+## Installation
 
-* How to run the test suite
+Application uses Ruby 2.7.1 and Rails 6.0.3. Also Redis needs to be installed on the system.
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ git clone git@github.com:madmol/bbq.git
+$ cd ./bbq
+$ bundle install --without production
+$ yarn install --check-files
+$ cp config/databese.yml.example config/databese.yml
+$ rails db:migrate
+```
 
-* Deployment instructions
+## Running Application
 
-* ...
+1. terminal tab: `$ bin/webpack-dev-server`
+2. terminal tab: `$ bundle exec rails s`
+3. terminal tab: `$ QUEUE=bbq* bundle exec rake environment resque:work`
+
+Your application is running at: http://localhost:3000/
